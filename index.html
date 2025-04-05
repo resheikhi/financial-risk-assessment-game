@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سفر سرمایه‌گذاری | ماجراجویی مالی</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="welcome-screen" class="screen active">
+            <div class="game-title">
+                <h1>سفر سرمایه‌گذاری</h1>
+                <p class="subtitle">ماجراجویی در دنیای مالی</p>
+            </div>
+            <div class="character-selection">
+                <h2>شخصیت خود را انتخاب کنید</h2>
+                <div class="character-options">
+                    <div class="character" data-character="conservative">
+                        <div class="character-image conservative"></div>
+                        <h3>محافظه‌کار</h3>
+                    </div>
+                    <div class="character" data-character="balanced">
+                        <div class="character-image balanced"></div>
+                        <h3>متعادل</h3>
+                    </div>
+                    <div class="character" data-character="adventurous">
+                        <div class="character-image adventurous"></div>
+                        <h3>ماجراجو</h3>
+                    </div>
+                </div>
+                <p class="hint">شخصیت انتخابی شما تأثیری در نتیجه نهایی ندارد و صرفاً برای شخصی‌سازی تجربه بازی است.</p>
+                <button id="start-btn" class="btn" disabled>آغاز ماجراجویی</button>
+            </div>
+        </div>
+
+        <div id="scenario-screen" class="screen">
+            <div class="scenario-header">
+                <div class="player-info">
+                    <div id="player-avatar"></div>
+                    <div id="player-level">سطح: <span id="level-value">1</span></div>
+                </div>
+                <div id="progress-container">
+                    <div id="progress-bar">
+                        <div id="progress"></div>
+                    </div>
+                    <div id="level-indicator">مرحله <span id="current-level">1</span> از 10</div>
+                </div>
+            </div>
+            
+            <div id="scenario-container">
+                <!-- Scenario content will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn">قدم قبلی</button>
+                <button id="next-btn" class="btn">قدم بعدی</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h2>پایان ماجراجویی!</h2>
+            <div class="result-avatar">
+                <div id="final-avatar"></div>
+                <div class="level-badge">
+                    <span id="final-level">سرمایه‌گذار حرفه‌ای</span>
+                </div>
+            </div>
+            
+            <div id="result-title">
+                <h3>پروفایل سرمایه‌گذاری شما: <span id="risk-profile-text"></span></h3>
+            </div>
+            
+            <div id="achievement-unlocked">
+                <div class="achievement">
+                    <div class="achievement-icon"></div>
+                    <div class="achievement-text">دستاورد: <span id="achievement-name">کاشف مالی</span></div>
+                </div>
+            </div>
+            
+            <div id="risk-score-container">
+                <div id="risk-score-visual">
+                    <div id="score-pointer"></div>
+                    <div class="risk-levels">
+                        <span>ریسک‌گریز</span>
+                        <span>محافظه‌کار</span>
+                        <span>متعادل</span>
+                        <span>ریسک‌پذیر</span>
+                        <span>پرریسک</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="result-details">
+                <p id="risk-description"></p>
+                <div id="treasure-chest">
+                    <h4>گنجینه پیشنهادی برای سرمایه‌گذاری:</h4>
+                    <div id="suggested-investments"></div>
+                </div>
+            </div>
+            
+            <div class="final-buttons">
+                <button id="share-btn" class="btn">اشتراک‌گذاری نتیجه</button>
+                <button id="restart-btn" class="btn">ماجراجویی جدید</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
