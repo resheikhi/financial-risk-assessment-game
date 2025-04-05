@@ -255,7 +255,30 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate pointer position (as percentage from left)
         const minPossibleScore = 10; // Minimum possible score
         const maxPossibleScore = 50; // Maximum possible score
-        const scorePercentage = ((totalScore - minPossibleScore) / (maxPossibleScore - minPossibleScore)) * 100;
+        
+        // نمایش درست نشانگر متناسب با پروفایل ریسک - با ترتیب جدید نوشته‌ها
+        let scorePercentage;
+        
+        // با توجه به ترتیب جدید نوشته‌ها، موقعیت نشانگر را تنظیم می‌کنیم
+        if (matchedProfile.id === "risk-averse") {
+            // ریسک‌گریز - سمت راست نمودار (80-100%)
+            scorePercentage = 90;
+        } else if (matchedProfile.id === "conservative") {
+            // محافظه‌کار - قسمت راست-میانی نمودار (60-80%)
+            scorePercentage = 70;
+        } else if (matchedProfile.id === "balanced") {
+            // متعادل - وسط نمودار (40-60%)
+            scorePercentage = 50;
+        } else if (matchedProfile.id === "growth-oriented") {
+            // ریسک‌پذیر - قسمت چپ-میانی نمودار (20-40%)
+            scorePercentage = 30;
+        } else if (matchedProfile.id === "aggressive") {
+            // پرریسک - سمت چپ نمودار (0-20%)
+            scorePercentage = 10;
+        } else {
+            // محاسبه عمومی در صورت نبود تطابق - معکوس شده
+            scorePercentage = 100 - (((totalScore - minPossibleScore) / (maxPossibleScore - minPossibleScore)) * 100);
+        }
         
         // Position the pointer with animation
         setTimeout(() => {
